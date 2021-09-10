@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once("contato_registro.php");
+
 
 
 require_once('src/PHPMailer.php');
@@ -12,32 +14,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-include_once("db/conexao.php");
 
-
-$nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-$whatsApp = filter_input(INPUT_POST, 'whatsApp', FILTER_SANITIZE_STRING);
-
-$contatoSql = "INSERT INTO contatos (nome, email, whatsApp) VALUES ('$nomeCompleto', '$email', '$whatsApp')";
-$contatoResultado = mysqli_query($conn,$contatoSql);
-
-if(mysqli_insert_id($conn)){
-  $_SESSION['mensagem'] = "Cadastro realizado com sucesso!";
-  header("Location:index.php");
-}else{
-  $_SESSION['mensagem'] = "Erro ao realizar o cadastro!";
-  header("Location:index.php");
-
-}
 
 $nomeCompleto = $_POST["nomeCompleto"];
 $email = $_POST["email"];
 $whatsApp = $_POST["whatsApp"];
 
-$mensagem_boas_vindas = "Olá, " . $nomeCompleto . " é um prazer ter você conosco! Entraremos em contato!";
+$mensagem_boas_vindas = "Olá," . $nomeCompleto . ", Sou a Luana e
+                 é um prazer ter você como o meu contato! Mais tarde, a gente conversa!!!";
 
-//require_once("src/PHPMailerAutoload.php");
+
 
 $mail = new PHPMailer;
 $mail->IsSMTP();

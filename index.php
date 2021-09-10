@@ -13,8 +13,8 @@ session_start()
     <style>
         body {
             background-image: url('images/background.jpg');
-           
-          
+
+
         }
     </style>
 
@@ -31,6 +31,18 @@ session_start()
         <?php
         echo $_SESSION['mensagem'] = "Cadastrado com sucesso";
         unset($_SESSION['mensagem']);
+        
+    }
+        ?>
+        </div>
+    <?php if (isset($_SESSION['mensagemErro'])) { ?>
+
+        <div class="notification is-danger">
+            <button class="delete"></button>
+        <?php
+        echo $_SESSION['mensagemErro'] = "Já existe um e-mail/whatsApp cadastrados!";
+        unset($_SESSION['mensagemErro']);
+        
     }
         ?>
         </div>
@@ -82,7 +94,7 @@ session_start()
             <div class="content has-text-centered">
                 <p> TODOS OS DIREITOS RESERVADOS A LUANA - CONTATOS₢</p>
                 <p>
-                   
+
                     <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
                     <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
                     is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
