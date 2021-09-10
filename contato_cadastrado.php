@@ -46,6 +46,7 @@ $mail->SetFrom($email);
 $mail->addAddress($email);
 $mail->Subject = ("E-mail de Boas-Vindas");
 $mail->msgHTML(utf8_decode($mensagem_boas_vindas));
+$mail->AddEmbeddedImage('images/gratidao.png', 'logo_2u');
 //$mail->AltBody = 'De: {$nomeCompleto}\nEmail: {$email}\nWhatsApp: {$whatsApp}';
 
 if($mail->send()) {

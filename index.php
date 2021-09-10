@@ -74,7 +74,7 @@ session_start()
                             <div class="field">
                                 <label class="label">WhatsApp:</label>
                                 <div class="control">
-                                    <input name="whatsApp" class="input is-rounded" type="tel" placeholder="Ex.: Informe seu WhatsApp!" pattern="[0-9]{2}[9]{1}[0-9]{8}" required>
+                                    <input name="whatsApp" class="input is-rounded" type="tel" placeholder="Ex.: 71999999999!" pattern="[0-9]{2}[9]{1}[0-9]{8}" required>
                                 </div>
                             </div>
 

@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS contatos (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    whatsApp VARCHAR(12)
+);
+
+SELECT * FROM contatos;
+
